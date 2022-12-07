@@ -1,0 +1,6 @@
+console.log('script is working')
+const header = document.getElementById("header")
+const subheader = document.createElement("h2")
+const subheader_content = document.createTextNode("Design. Develop. Deploy.")
+subheader.appendChild(subheader_content)
+header.appendChild(subheader)
