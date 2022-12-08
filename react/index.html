@@ -16,11 +16,19 @@
     <!-- <script type="text/javascript"> -->
     <script type="text/jsx">
         function HomePage(props) {
+            const [interestedClients, setInterestedClients] = React.useState(0)
+
+            function interestHandler() {
+                console.log("client is interested")
+                setInterestedClients(interestedClients+1)
+            }
+            
             return (
                 <div>
                     <Header name={props.name}/>
                     <Subheader designation={props.designation} organization={props.organization}/>
                     <Links/>
+                    <button onClick={interestHandler}>Interested [{interestedClients}]</button>
                 </div>
             )
         }
