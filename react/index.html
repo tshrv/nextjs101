@@ -15,41 +15,49 @@
     <!-- <script src="main.js" type="text/jsx"></script> -->
     <!-- <script type="text/javascript"> -->
     <script type="text/jsx">
-        function HomePage() {
+        function HomePage(props) {
             return (
                 <div>
-                    <Header/>
-                    <Subheader/>
+                    <Header name={props.name}/>
+                    <Subheader designation={props.designation} organization={props.organization}/>
                     <Links/>
                 </div>
             )
         }
-        function Header(){
-            return <h1>Tushar Srivastava,</h1>
+
+        function Header({name}){
+            // return <h1>Tushar Srivastava,</h1>
+            return <h1>{name},</h1>
         }
         
-        function Subheader(){
+        function Subheader({designation, organization}){
             return (
                 <h2>
-                    Senior Software Engineer
+                    {designation}
                     <br/>
-                    @EPAM Systems Inc.
+                    @{organization}
                 </h2>
             )
         }
 
         function Links() {
+            const linkOptions = ["email", "linkedin", "github"]
             return (
                 <ul>
-                    <li>email</li>
-                    <li>linkedin</li>
-                    <li>github</li>
+                    {
+                        linkOptions.map((linkOption)=><li key={linkOption}>{linkOption}</li>)
+                    }
                 </ul>
             )
         }
 
         const app = document.getElementById("app")
-        ReactDOM.render(<HomePage/>, app)
+        ReactDOM.render(
+            <HomePage name="Tushar Srivastava"
+                designation="Senior Software Engineer"
+                organization="EPAM Systems Inc."/>,
+            app
+        )
     </script>
 </body>
 </html>
