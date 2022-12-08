@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Based WebPage</title>
+</head>
+<body>
+    <p><i>React Based WebPage</i></p>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- <script src="main.js" type="text/jsx"></script> -->
+    <!-- <script type="text/javascript"> -->
+    <script type="text/jsx">
+        function HomePage() {
+            return (
+                <div>
+                    <Header/>
+                    <Subheader/>
+                    <Links/>
+                </div>
+            )
+        }
+        function Header(){
+            return <h1>Tushar Srivastava,</h1>
+        }
+        
+        function Subheader(){
+            return (
+                <h2>
+                    Senior Software Engineer
+                    <br/>
+                    @EPAM Systems Inc.
+                </h2>
+            )
+        }
+
+        function Links() {
+            return (
+                <ul>
+                    <li>email</li>
+                    <li>linkedin</li>
+                    <li>github</li>
+                </ul>
+            )
+        }
+
+        const app = document.getElementById("app")
+        ReactDOM.render(<HomePage/>, app)
+    </script>
+</body>
+</html>
